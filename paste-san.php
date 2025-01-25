@@ -2,8 +2,8 @@
 /*
 Plugin Name: Paste-san
 Plugin URI: https://haruru.dev/oss/paste-san
-Description: Add "Paste Raw HTML" button to your visual editor
-Author: NAE, haruru
+Description: Add "Paste Raw HTML" button to your visual editor.
+Author: haruru (Original: NAE)
 Version: 0.3
 Author URI: https://haruru.dev
 License: GPL2
@@ -26,28 +26,28 @@ License: GPL2
 */
 
 if (!class_exists('PasteRawHtml')) :
-class PasteRawHtml
-{
-    public function __construct()
+    class PasteRawHtml
     {
-        add_filter('mce_buttons', array($this, 'register_button'));
-        add_filter('mce_external_plugins', array($this, 'register_plugin'));
+        public function __construct()
+        {
+            add_filter('mce_buttons', array($this, 'register_button'));
+            add_filter('mce_external_plugins', array($this, 'register_plugin'));
+        }
+
+        public function register_button($buttons)
+        {
+            array_push($buttons, 'paste_raw_html');
+
+            return $buttons;
+        }
+
+        public function register_plugin($plugin_array)
+        {
+            $plugin_array['paste_raw_html'] = plugins_url('/paste-san-button.js', __FILE__);
+
+            return $plugin_array;
+        }
     }
-
-    public function register_button($buttons)
-    {
-        array_push($buttons, 'paste_raw_html');
-
-        return $buttons;
-    }
-
-    public function register_plugin($plugin_array)
-    {
-        $plugin_array['paste_raw_html'] = plugins_url('/pasteRawHtmlButton.js', __FILE__);
-
-        return $plugin_array;
-    }
-}
 endif;
 
 $nae_prh = new PasteRawHtml();
