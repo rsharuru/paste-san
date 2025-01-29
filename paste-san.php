@@ -25,26 +25,28 @@ License: GPL2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 if (!class_exists('PasteRawHtml')) :
     class PasteRawHtml
     {
         public function __construct()
-        {
-            add_filter('mce_buttons', array($this, 'register_button'));
+        {            
+            add_filter('mce_buttons_2', array($this, 'register_button'));
             add_filter('mce_external_plugins', array($this, 'register_plugin'));
         }
 
         public function register_button($buttons)
         {
             array_push($buttons, 'paste_raw_html');
-
             return $buttons;
         }
 
         public function register_plugin($plugin_array)
         {
-            $plugin_array['paste_raw_html'] = plugins_url('/paste-san-button.js', __FILE__);
-
+            $plugin_array['paste_raw_html'] = esc_url(plugins_url('/paste-san-button.js', __FILE__));
             return $plugin_array;
         }
     }
