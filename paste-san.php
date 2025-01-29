@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Paste-san
-Plugin URI: https://haruru.dev/oss/paste-san
+Plugin URI: https://sennse.jp/oss/paste-san
 Description: Add "Paste Raw HTML" button to your visual editor.
-Author: haruru (Original: NAE)
-Version: 0.3
-Author URI: https://haruru.dev
+Author: Sennse (Original: NAE)
+Version: 1.0
+Author URI: https://sennse.jp/oss/
 License: GPL2
 */
 
-/*  Copyright 2017 NAE (email : @__NAE__), 2025 haruru (email : git@haruru.dev)
+/*  Copyright 2017 NAE (email : @__NAE__), 2025 Sennse (email : oss@sennse.jp)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
