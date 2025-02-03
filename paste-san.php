@@ -4,7 +4,7 @@ Plugin Name: Paste-san
 Plugin URI: https://sennse.jp/oss/paste-san
 Description: Add "Paste Raw HTML" button to your visual editor.
 Author: Sennse (Original: NAE)
-Version: 1.0
+Version: 1.1
 Author URI: https://sennse.jp/oss/
 License: GPL2
 */
